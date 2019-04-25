@@ -18,15 +18,15 @@ const TodoForm = props => {
       <div>
         <form>
             <input 
-                type="text";
-                value={props.task}
-                name="name"
-                placeholder="Todo"
-                onChange={props.handleChanges}
+                onChange={props.handleTodoChange}
+                type="text"
+                name="todo"
+                value={props.value}
+                placeholder="What To Do"
             />
         </form>
-        <button onClick={props.updateList}>Add Todo</button>
-        <button onClick={props.clearList}>Clear Completed</button>
+        <button onClick={props.handleAddTodo}>Add Todo</button>
+        <button onClick={props.handleClearTodos}>Clear Completed Items</button>
       </div>
 
   );
