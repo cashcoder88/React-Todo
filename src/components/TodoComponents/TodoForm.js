@@ -6,14 +6,14 @@
 
 import React from 'react';
 
-function TodoForm(props) {
+const TodoForm = (props) => {
   <div>
       <form>
         <input 
             placeholder="Add Todo"
             type="text"
             value={props.value}
-            onChange={props.handleChanges}
+            onChange={props.handleTodoChange}
             name="name"
         />
         <button onClick={props.handleAddTodo}>Add</button>

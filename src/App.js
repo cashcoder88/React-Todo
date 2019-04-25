@@ -14,7 +14,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todoArray: [
+      todos: [
         {
           task: 'Organize Garage',
           id: 1528817077286,
@@ -39,7 +39,7 @@ class App extends React.Component {
     });
   }
 
-
+  changeTodo = x => this.setState({ [x.target.name]: x.target.value });
 
   render() {
     return (
@@ -47,7 +47,6 @@ class App extends React.Component {
         <h1>Welcome</h1>
         <TodoList
           todos={this.state.todos}
-          handleToggleComplete={this.toggleTodoComplete}
         />
         <TodoForm
           value={this.state.todo}
