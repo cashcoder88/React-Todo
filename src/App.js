@@ -4,6 +4,8 @@
   - All of your `handler` functions should live here on `<App />`.*/
 
 import React from 'react';
+import TodoForm from './components/TodoComponents/TodoForm';
+import TodoList from './components/TodoComponents/TodoList';
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -28,10 +30,30 @@ class App extends React.Component {
     };
   }
 
+  addTodo = x => {
+    x.preventDefault();
+    const newTodo = { task: this.state.todo, completed: false, id: Date.now() }
+    this.setState({
+      todos: [this.state.todos, newTodo],
+      todo: ''
+    });
+  }
+
+
+
   render() {
     return (
       <div>
-        <h2>Welcome to your Todo App!</h2>
+        <h1>Welcome</h1>
+        <TodoList
+          todos={this.state.todos}
+          handleToggleComplete={this.toggleTodoComplete}
+        />
+        <TodoForm
+          value={this.state.todo}
+          handleTodoChange={this.changeTodo}
+          handleAddTodo={this.addTodo}
+        />
       </div>
     );
   }
