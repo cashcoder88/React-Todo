@@ -45,13 +45,20 @@ class App extends React.Component {
        );
 
 
-      toggleComplete = id => {
-        this.setState({
-          todos: this.state.todos.map(x => 
-            x.id === id ? { ...x, completed: !x.completed } : x
-            )
-        })
-      }
+  toggleComplete = id => {
+    this.setState({
+      todos: this.state.todos.map(x => 
+        x.id === id ? { ...x, completed: !x.completed } : x
+        )
+    })
+  }
+
+  clearCompleted = x => {
+    x.preventDefault();
+    let xyz = this.state.todos.filter(todo => !todo.completed)
+    this.setState({ xyz })
+  }
+
 
   render() {
     return (
