@@ -15,9 +15,9 @@ const TodoForm = (props) => {
               placeholder="Add Todo"
               type="text"
               value={props.value}
-              onChange={props.handleTodoChange}
+              onChange={props.changeTodo}
           />
-          <button onClick={props.handleAddTodo}>Add</button>
+          <button onClick={props.addTodo}>Add</button>
         </form>
     </div> 
   )
