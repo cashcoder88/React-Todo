@@ -1,7 +1,7 @@
-/*- `<App />` will hold all the data needed for this project. It will
- also be the container for your Todo Components.
-  - All of your application data will be stored here on `<App />`.
-  - All of your `handler` functions should live here on `<App />`.*/
+// /*- `<App />` will hold all the data needed for this project. It will
+//  also be the container for your Todo Components.
+//   - All of your application data will be stored here on `<App />`.
+//   - All of your `handler` functions should live here on `<App />`.*/
 
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
@@ -34,12 +34,15 @@ class App extends React.Component {
     x.preventDefault();
     const newTodo = { task: this.state.todo, completed: false, id: Date.now() }
     this.setState({
-      todos: [this.state.todos, newTodo],
+      todos: [...this.state.todos, newTodo],
       todo: ''
     });
   }
 
-  changeTodo = x => this.setState({ [x.target.name]: x.target.value });
+  changeTodo = x => 
+      this.setState(
+        { [x.target.name]: x.target.value }
+       );
 
   render() {
     return (
@@ -59,3 +62,4 @@ class App extends React.Component {
 }
 
 export default App;
+

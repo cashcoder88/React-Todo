@@ -11,36 +11,16 @@ const TodoForm = (props) => {
     <div>
         <form>
           <input 
+              name="todo"
               placeholder="Add Todo"
               type="text"
               value={props.value}
               onChange={props.handleTodoChange}
-              name="name"
           />
           <button onClick={props.handleAddTodo}>Add</button>
         </form>
     </div> 
-    )
+  )
 }
 export default TodoForm;
 
-/* 
-import React from 'react';
-const TodoForm = props => {
-  return (
-    <form>
-      <input
-        onChange={props.handleTodoChange}
-        type="text"
-        name="todo"
-        value={props.value}
-        placeholder="...todo"
-      />
-      <button onClick={props.handleAddTodo}>Add Todo</button>
-      <button onClick={props.handleClearTodos}>Clear Completed</button>
-    </form>
-  );
-};
-
-export default TodoForm;
-*/
