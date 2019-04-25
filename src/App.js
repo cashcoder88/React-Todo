@@ -53,7 +53,7 @@ class App extends React.Component {
     })
   }
 
-  clearCompleted = x => {
+  clearComplete = x => {
     x.preventDefault();
     let xyz = this.state.todos.filter(todo => !todo.completed)
     this.setState({ xyz })
@@ -66,11 +66,13 @@ class App extends React.Component {
         <h1>Welcome</h1>
         <TodoList
           todos={this.state.todos}
+          toggleComplete={this.state.toggleComplete}
         />
         <TodoForm
           value={this.state.todo}
           changeTodo={this.changeTodo}
           addTodo={this.addTodo}
+          clearComplete={this.state.clearComplete}
         />
       </div>
     );
