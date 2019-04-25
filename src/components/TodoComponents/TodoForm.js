@@ -11,6 +11,7 @@ const TodoForm = (props) => {
     <div>
         <form>
           <input 
+             
               name="todo"
               placeholder="Add Todo"
               type="text"
