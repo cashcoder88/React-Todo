@@ -55,8 +55,8 @@ class App extends React.Component {
 
   clearComplete = x => {
     x.preventDefault();
-    let xyz = this.state.todos.filter(todo => !todo.completed)
-    this.setState({ xyz })
+    let todos = this.state.todos.filter(todo => !todo.completed)
+    this.setState({ todos })
   }
 
 
@@ -65,14 +65,14 @@ class App extends React.Component {
       <div>
         <h1>Welcome</h1>
         <TodoList
+          toggleComplete={this.toggleComplete}
           todos={this.state.todos}
-          toggleComplete={this.state.toggleComplete}
         />
         <TodoForm
           value={this.state.todo}
           changeTodo={this.changeTodo}
           addTodo={this.addTodo}
-          clearComplete={this.state.clearComplete}
+          clearComplete={this.clearComplete}
         />
       </div>
     );
